@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =========================================================================
+     mainwindow.ui — Qt Designer 表单文件
+     =========================================================================
+     这个 XML 文件用 Qt Designer（可视化 UI 编辑器）绘制和编辑。
+     构建时 qmake 调用 uic（UI编译器）从它生成 ui_mainwindow.h，
+     里面会有对应的 C++ 类，包含所有控件的指针（通过 ui->xxx 访问）。
+
+     布局结构（从上到下）：
+        1. QLabel "欢迎来到..."      — 顶部标题
+        2. toolbar (btn_add/delete/save) — CRUD 工具栏
+        3. QTableWidget              — 数据表格（核心区域）
+        4. 分页栏                     — [上一页] 页码 [下一页]
+        5. SQL 输入栏                 — [lineEdit] [确定]
+
+     所有控件都已在本文件中，用 Qt Designer 打开即可编辑。
+     ========================================================================= -->
+
+<ui version="4.0">
+
+ <!-- =========================================================================
+      窗口本身
+      ====================================================================== -->
+ <class>MainWindow</class>              <!-- C++ 类名 -->
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x> <y>0</y> <width>818</width> <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>          <!-- 窗口标题栏文字 -->
+  </property>
+  <property name="styleSheet">
+   <!-- ★ 背景颜色只在 .ui 里简单设置一下 -->
+   <!--    完整的现代化样式在 C++ 的 setStyleSheet() 中，会覆盖这里 -->
+   <string notr="true">background-color: #E3F2FD;</string>
+  </property>
+
+  <!-- =======================================================================
+       中心控件 — 整个窗口的主体区域
+       ===================================================================== -->
+  <widget class="QWidget" name="centralwidget">
+
+   <!-- 垂直布局：所有控件从上到下排列 -->
+   <layout class="QVBoxLayout" name="verticalLayout">
+
+    <!-- ===== 第 1 行：顶部标题 ========================================= -->
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="sizePolicy">
+       <!-- 水平方向可以拉伸（窗口变宽时标题也跟着变宽） -->
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size><width>100</width><height>30</height></size>
+      </property>
+      <property name="maximumSize">
+       <size><width>1000000</width><height>30</height></size>
+      </property>
+      <property name="text">
+       <string>欢迎来到张智毅的数据管理系统</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>       <!-- 居中显示 -->
+      </property>
+     </widget>
+    </item>
+
+    <!-- ===== 第 2 行：CRUD 工具栏（btn_add / btn_delete / btn_save）===== -->
+    <!-- 水平布局：[添加行] [删除行]  ----stretch----  [保存]                -->
+    <item>
+     <widget class="QWidget" name="toolbar" native="true">
+      <layout class="QHBoxLayout" name="toolbarLayout">
+       <property name="leftMargin">0</property>
+       <property name="topMargin">0</property>
+       <property name="rightMargin">0</property>
+       <property name="bottomMargin">0</property>
+       <item>
+        <widget class="QPushButton" name="btn_add">
+         <property name="text"><string>添加行</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_delete">
+         <property name="text"><string>删除行</string></property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="toolbarSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size><width>40</width><height>20</height></size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_save">
+         <property name="text"><string>保存</string></property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+    <!-- ===== 第 3 行：数据表格 ========================================= -->
+    <item>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="styleSheet">
+       <!-- 表格的基本样式，C++ 样式表会进一步美化 -->
+       <string notr="true">background-color: white;
+gridline-color: #F0F0F0;</string>
+      </property>
+      <!-- 表格的属性（行数、列数、内容）都在 C++ 中动态设置 -->
+     </widget>
+    </item>
+
+    <!-- ===== 第 4 行：分页栏 =========================================== -->
+    <!-- 水平布局：上一页 ← 页码 → 下一页 -->
+    <item>
+     <widget class="QWidget" name="widget_2" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="btn_pre">
+         <property name="text"><string>上一页</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_page">
+         <property name="text"><string>TextLabel</string></property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_next">
+         <property name="text"><string>下一页</string></property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+    <!-- ===== 第 5 行：SQL 输入栏 ======================================= -->
+    <!-- 水平布局：[lineEdit — 输入 SQL 语句]  [确定按钮] -->
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="styleSheet">
+          <!-- 输入框基础样式，C++ 中会进一步美化 -->
+          <string notr="true">background-color: #FFFFFF;
+border: 1px solid #ccc;
+border-radius: 4px;</string>
+         </property>
+         <!-- 用户在这里输入 SELECT field1,field2 FROM tablename -->
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="styleSheet">
+          <string notr="true">background-color: #2196F3;
+color: white;
+border-radius: 5px;</string>
+         </property>
+         <property name="text">
+          <string>确定</string>   <!-- 点击执行 SQL 查询 -->
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+   </layout>
+  </widget>
+
+  <!-- =======================================================================
+      菜单栏（未使用，保留为空）
+      ===================================================================== -->
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect><x>0</x><y>0</y><width>818</width><height>30</height></rect>
+   </property>
+   <!-- 一个空菜单（没有菜单项），可以忽略 -->
+   <widget class="QMenu" name="menu">
+    <property name="title"><string/></property>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+
+  <!-- =======================================================================
+      状态栏 — 显示提示信息（如"已保存到 xxx.csv"）
+      ===================================================================== -->
+  <widget class="QStatusBar" name="statusbar"/>
+
+  <!-- =======================================================================
+      工具栏（未使用，保留为空）
+      ===================================================================== -->
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle"><string>toolBar</string></property>
+   <attribute name="toolBarArea">
+    <enum>BottomToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+
+ </widget>
+
+ <resources/>
+ <connections/>
+</ui>
