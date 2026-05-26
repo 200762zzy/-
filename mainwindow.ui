@@ -71,7 +71,7 @@
     </item>
 
     <!-- ===== 第 2 行：CRUD 工具栏（btn_add / btn_delete / btn_save）===== -->
-    <!-- 水平布局：[添加行] [删除行]  ----stretch----  [保存]                -->
+    <!-- 水平布局：[添加行] [删除行]  [保存]                -->
     <item>
      <widget class="QWidget" name="toolbar" native="true">
       <layout class="QHBoxLayout" name="toolbarLayout">
