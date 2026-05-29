@@ -18,6 +18,15 @@
 // 静态辅助函数
 // =============================================================================
 
+// QStringList 大小写不敏感查找（QStringList::indexOf 不支持 CaseSensitivity）
+static int indexOfCI(const QStringList &list, const QString &value)
+{
+    for (int i = 0; i < list.size(); ++i)
+        if (list[i].compare(value, Qt::CaseInsensitive) == 0)
+            return i;
+    return -1;
+}
+
 // 去除字符串两端引号
 static QString stripQuotes(const QString &s)
 {
@@ -431,7 +440,7 @@ bool MainWindow::validateAndParseSql(const QString &sql, QString &errorMsg)
                 // 检查字段是否存在（错误类型 4）
                 QStringList hdr; QList<QStringList> dummy;
                 if (loadCsvFile(table, hdr, dummy)) {
-                    if (hdr.indexOf(field, Qt::CaseInsensitive) < 0) {
+                    if (indexOfCI(hdr, field) < 0) {
                         errorMsg = "字段不存在：" + f + "（错误类型 4）";
                         return false;
                     }
@@ -442,7 +451,7 @@ bool MainWindow::validateAndParseSql(const QString &sql, QString &errorMsg)
             QStringList hdr; QList<QStringList> dummy;
             if (loadCsvFile(m_queryTables[0], hdr, dummy)) {
                 for (const QString &f : m_queryFields) {
-                    if (hdr.indexOf(f, Qt::CaseInsensitive) < 0) {
+                    if (indexOfCI(hdr, f) < 0) {
                         errorMsg = "字段不存在：" + f + "（错误类型 4）";
                         return false;
                     }
@@ -609,7 +618,7 @@ bool MainWindow::executeSingleTable()
     // 字段到 CSV 列索引映射
     m_fieldIndexes.clear();
     for (const QString &f : m_queryFields) {
-        m_fieldIndexes << header.indexOf(f, Qt::CaseInsensitive);
+        m_fieldIndexes << indexOfCI(header, f);
     }
 
     // 按 WHERE 条件过滤，存储完整行
@@ -682,7 +691,7 @@ bool MainWindow::executeMultiTable()
     // SELECT 字段 → 组合表头列索引
     QList<int> selectIndexes;
     for (const QString &f : m_queryFields) {
-        int idx = combinedHeader.indexOf(f, Qt::CaseInsensitive);
+        int idx = indexOfCI(combinedHeader, f);
         if (idx < 0) {
             QMessageBox::warning(this, "错误", "无法找到字段：" + f);
             return false;
@@ -847,7 +856,7 @@ void MainWindow::syncTableToData()
     // 字段 → CSV 列索引
     QList<int> fieldToCsv;
     for (const QString &f : m_queryFields) {
-        fieldToCsv << m_csvHeader.indexOf(f, Qt::CaseInsensitive);
+        fieldToCsv << indexOfCI(m_csvHeader, f);
     }
 
     for (int i = 0; i < ui->tableWidget->rowCount(); i++) {
