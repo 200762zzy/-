@@ -1,0 +1,16 @@
+********* Start testing of TestDocxHelper *********
+Config: Using QtTest library 5.14.2, Qt 5.14.2 (i386-little_endian-ilp32 shared (dynamic) release build; by GCC 7.3.0)
+PASS   : TestDocxHelper::initTestCase()
+PASS   : TestDocxHelper::testExtractScore_WithScoreKeyword()
+PASS   : TestDocxHelper::testExtractScore_WithMultipleKeywords()
+PASS   : TestDocxHelper::testExtractScore_WithDecimalScore()
+PASS   : TestDocxHelper::testExtractScore_FallbackNoKeyword()
+PASS   : TestDocxHelper::testExtractScore_NoScore()
+PASS   : TestDocxHelper::testExtractScore_InvalidFile()
+PASS   : TestDocxHelper::testWriteComment_ReplaceExisting()
+PASS   : TestDocxHelper::testWriteComment_AppendNew()
+PASS   : TestDocxHelper::testWriteComment_EmptyComment()
+PASS   : TestDocxHelper::testWriteComment_VerifyContent()
+PASS   : TestDocxHelper::cleanupTestCase()
+Totals: 12 passed, 0 failed, 0 skipped, 0 blacklisted, 22704ms
+********* Finished testing of TestDocxHelper *********

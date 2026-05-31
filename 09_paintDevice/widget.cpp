@@ -1,0 +1,56 @@
+#include "widget.h"
+#include "ui_widget.h"
+#include<QPainter>
+#include<QPixmap>
+#include<QPicture>
+Widget::Widget(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::Widget)
+{
+    ui->setupUi(this);
+//    QPixmap pix(300,300);
+//    //默认黑色填充
+//    pix.fill(Qt::white);
+//    QPainter painter(&pix);
+//    painter.setPen(QColor(255,0,0));
+//    painter.drawEllipse(QPoint(150,150),100,100);
+//    pix.save("D:\\qt\\09_paintDevice\\pix.png");
+
+//        QImage img(300,300,QImage::Format_BGR30);
+//        //默认黑色填充
+//        img.fill(Qt::white);
+//        QPainter painter(&img);
+//        painter.setPen(QColor(255,0,0));
+//        painter.drawEllipse(QPoint(150,150),100,100);
+//        img.save("D:\\qt\\09_paintDevice\\img.png");
+
+    QPicture pic;
+    QPainter painter;
+    //开始录制painter的绘图步骤
+    painter.begin(&pic);
+    painter.drawEllipse(QPoint(150,150),100,100);
+    pic.save("D:\\qt\\09_paintDevice\\pic.png");
+}
+
+Widget::~Widget()
+{
+    delete ui;
+}
+
+void Widget::paintEvent(QPaintEvent *event)
+{
+    //先显示一张图片再改像素
+    QImage img;
+    img.load(":/pix.png");
+    for(int x=50;x<100;x++){
+        for(int y=50;y<100;y++){
+            //修改像素
+            img.setPixelColor(x,y,QColor(255,123,0));
+        }
+    }
+
+
+    QPainter painter(this);
+    painter.drawImage(0,0,img);
+}
+

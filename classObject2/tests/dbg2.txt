@@ -1,0 +1,49 @@
+********* Start testing of TestDocxHelper *********
+Config: Using QtTest library 5.14.2, Qt 5.14.2 (i386-little_endian-ilp32 shared (dynamic) release build; by GCC 7.3.0)
+PASS   : TestDocxHelper::initTestCase()
+FAIL!  : TestDocxHelper::testExtractScore_WithScoreKeyword() QDom: found 0 t-elements, rawlen=457 content=<?xml version="1.0" encoding="UTF-8" standalone="yes"?>?
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">?
+  <w:body>?
+    <w:p>?
+      <w:r>?
+        <w:t>学生姓名：张三</w:t>?
+      </w:r>?
+    </w:p>?
+    <w:p>?
+      <w:r>?
+        <w:t>实验名称：数据结构</w:t>?
+      </w:r>?
+    </w:p>?
+    <w:p>?
+      <w:r>?
+        <w:t>成绩：85分</w:t>?
+      </w:r>?
+    </w:p>?
+?
+  </w:body>?
+</w:document>
+test_docxhelper.cpp(219) : failure location
+FAIL!  : TestDocxHelper::testExtractScore_WithMultipleKeywords() Compared values are not the same
+   Actual   (score)      : ""
+   Expected (tc.expected): "92"
+test_docxhelper.cpp(265) : failure location
+FAIL!  : TestDocxHelper::testExtractScore_WithDecimalScore() Compared values are not the same
+   Actual   (score)        : ""
+   Expected (QString("89")): "89"
+test_docxhelper.cpp(282) : failure location
+FAIL!  : TestDocxHelper::testExtractScore_FallbackNoKeyword() Compared values are not the same
+   Actual   (score)        : ""
+   Expected (QString("73")): "73"
+test_docxhelper.cpp(299) : failure location
+PASS   : TestDocxHelper::testExtractScore_NoScore()
+PASS   : TestDocxHelper::testExtractScore_InvalidFile()
+PASS   : TestDocxHelper::testWriteComment_ReplaceExisting()
+PASS   : TestDocxHelper::testWriteComment_AppendNew()
+PASS   : TestDocxHelper::testWriteComment_EmptyComment()
+FAIL!  : TestDocxHelper::testWriteComment_VerifyContent() Compared values are not the same
+   Actual   (score)        : ""
+   Expected (QString("95")): "95"
+test_docxhelper.cpp(399) : failure location
+PASS   : TestDocxHelper::cleanupTestCase()
+Totals: 7 passed, 5 failed, 0 skipped, 0 blacklisted, 16241ms
+********* Finished testing of TestDocxHelper *********

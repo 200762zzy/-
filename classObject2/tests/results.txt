@@ -1,0 +1,91 @@
+********* Start testing of TestDocxHelper *********
+Config: Using QtTest library 5.14.2, Qt 5.14.2 (i386-little_endian-ilp32 shared (dynamic) release build; by GCC 7.3.0)
+INFO   : TestDocxHelper::initTestCase() entering
+PASS   : TestDocxHelper::initTestCase()
+INFO   : TestDocxHelper::testExtractScore_WithScoreKeyword() entering
+INFO   : TestDocxHelper::testExtractScore_WithScoreKeyword() QVERIFY(!docxPath.isEmpty())
+test_docxhelper.cpp(191) : failure location
+INFO   : TestDocxHelper::testExtractScore_WithScoreKeyword() QCOMPARE(score, QString("85"))
+test_docxhelper.cpp(196) : failure location
+FAIL!  : TestDocxHelper::testExtractScore_WithScoreKeyword() Compared values are not the same
+   Actual   (score)        : ""
+   Expected (QString("85")): "85"
+test_docxhelper.cpp(196) : failure location
+INFO   : TestDocxHelper::testExtractScore_WithMultipleKeywords() entering
+INFO   : TestDocxHelper::testExtractScore_WithMultipleKeywords() QVERIFY(!docxPath.isEmpty())
+test_docxhelper.cpp(223) : failure location
+INFO   : TestDocxHelper::testExtractScore_WithMultipleKeywords() QCOMPARE(score, tc.expected)
+test_docxhelper.cpp(227) : failure location
+FAIL!  : TestDocxHelper::testExtractScore_WithMultipleKeywords() Compared values are not the same
+   Actual   (score)      : ""
+   Expected (tc.expected): "92"
+test_docxhelper.cpp(227) : failure location
+INFO   : TestDocxHelper::testExtractScore_WithDecimalScore() entering
+INFO   : TestDocxHelper::testExtractScore_WithDecimalScore() QVERIFY(!docxPath.isEmpty())
+test_docxhelper.cpp(239) : failure location
+INFO   : TestDocxHelper::testExtractScore_WithDecimalScore() QCOMPARE(score, QString("89"))
+test_docxhelper.cpp(244) : failure location
+FAIL!  : TestDocxHelper::testExtractScore_WithDecimalScore() Compared values are not the same
+   Actual   (score)        : ""
+   Expected (QString("89")): "89"
+test_docxhelper.cpp(244) : failure location
+INFO   : TestDocxHelper::testExtractScore_FallbackNoKeyword() entering
+INFO   : TestDocxHelper::testExtractScore_FallbackNoKeyword() QVERIFY(!docxPath.isEmpty())
+test_docxhelper.cpp(256) : failure location
+INFO   : TestDocxHelper::testExtractScore_FallbackNoKeyword() QCOMPARE(score, QString("73"))
+test_docxhelper.cpp(261) : failure location
+FAIL!  : TestDocxHelper::testExtractScore_FallbackNoKeyword() Compared values are not the same
+   Actual   (score)        : ""
+   Expected (QString("73")): "73"
+test_docxhelper.cpp(261) : failure location
+INFO   : TestDocxHelper::testExtractScore_NoScore() entering
+INFO   : TestDocxHelper::testExtractScore_NoScore() QVERIFY(!docxPath.isEmpty())
+test_docxhelper.cpp(272) : failure location
+INFO   : TestDocxHelper::testExtractScore_NoScore() QVERIFY(score.isEmpty())
+test_docxhelper.cpp(277) : failure location
+INFO   : TestDocxHelper::testExtractScore_NoScore() QVERIFY(!errorMsg.isEmpty())
+test_docxhelper.cpp(278) : failure location
+INFO   : TestDocxHelper::testExtractScore_NoScore() QVERIFY(errorMsg.contains("³É¼¨") || errorMsg.contains("·ÖÊý"))
+test_docxhelper.cpp(279) : failure location
+PASS   : TestDocxHelper::testExtractScore_NoScore()
+INFO   : TestDocxHelper::testExtractScore_InvalidFile() entering
+INFO   : TestDocxHelper::testExtractScore_InvalidFile() QVERIFY(score.isEmpty())
+test_docxhelper.cpp(289) : failure location
+INFO   : TestDocxHelper::testExtractScore_InvalidFile() QVERIFY(!errorMsg.isEmpty())
+test_docxhelper.cpp(290) : failure location
+PASS   : TestDocxHelper::testExtractScore_InvalidFile()
+INFO   : TestDocxHelper::testWriteComment_ReplaceExisting() entering
+INFO   : TestDocxHelper::testWriteComment_ReplaceExisting() QVERIFY(!docxPath.isEmpty())
+test_docxhelper.cpp(304) : failure location
+INFO   : TestDocxHelper::testWriteComment_ReplaceExisting() QVERIFY(ok)
+test_docxhelper.cpp(309) : failure location
+PASS   : TestDocxHelper::testWriteComment_ReplaceExisting()
+INFO   : TestDocxHelper::testWriteComment_AppendNew() entering
+INFO   : TestDocxHelper::testWriteComment_AppendNew() QVERIFY(!docxPath.isEmpty())
+test_docxhelper.cpp(321) : failure location
+INFO   : TestDocxHelper::testWriteComment_AppendNew() QVERIFY(ok)
+test_docxhelper.cpp(326) : failure location
+PASS   : TestDocxHelper::testWriteComment_AppendNew()
+INFO   : TestDocxHelper::testWriteComment_EmptyComment() entering
+INFO   : TestDocxHelper::testWriteComment_EmptyComment() QVERIFY(!docxPath.isEmpty())
+test_docxhelper.cpp(336) : failure location
+INFO   : TestDocxHelper::testWriteComment_EmptyComment() QVERIFY(!ok)
+test_docxhelper.cpp(341) : failure location
+INFO   : TestDocxHelper::testWriteComment_EmptyComment() QVERIFY(!errorMsg.isEmpty())
+test_docxhelper.cpp(342) : failure location
+PASS   : TestDocxHelper::testWriteComment_EmptyComment()
+INFO   : TestDocxHelper::testWriteComment_VerifyContent() entering
+INFO   : TestDocxHelper::testWriteComment_VerifyContent() QVERIFY(!docxPath.isEmpty())
+test_docxhelper.cpp(353) : failure location
+INFO   : TestDocxHelper::testWriteComment_VerifyContent() QVERIFY(ok)
+test_docxhelper.cpp(357) : failure location
+INFO   : TestDocxHelper::testWriteComment_VerifyContent() QCOMPARE(score, QString("95"))
+test_docxhelper.cpp(361) : failure location
+FAIL!  : TestDocxHelper::testWriteComment_VerifyContent() Compared values are not the same
+   Actual   (score)        : ""
+   Expected (QString("95")): "95"
+test_docxhelper.cpp(361) : failure location
+INFO   : TestDocxHelper::cleanupTestCase() entering
+PASS   : TestDocxHelper::cleanupTestCase()
+Totals: 7 passed, 5 failed, 0 skipped, 0 blacklisted, 12523ms
+********* Finished testing of TestDocxHelper *********

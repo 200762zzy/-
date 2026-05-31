@@ -1,0 +1,22 @@
+********* Start testing of TestDocxHelper *********
+Config: Using QtTest library 5.14.2, Qt 5.14.2 (i386-little_endian-ilp32 shared (dynamic) release build; by GCC 7.3.0)
+PASS   : TestDocxHelper::initTestCase()
+PASS   : TestDocxHelper::testExtractScore_WithScoreKeyword()
+FAIL!  : TestDocxHelper::testExtractScore_WithMultipleKeywords() Compared values are not the same
+   Actual   (score)      : "78.5"
+   Expected (tc.expected): "78"
+test_docxhelper.cpp(228) : failure location
+FAIL!  : TestDocxHelper::testExtractScore_WithDecimalScore() Compared values are not the same
+   Actual   (score)        : "89.5"
+   Expected (QString("89")): "89"
+test_docxhelper.cpp(245) : failure location
+PASS   : TestDocxHelper::testExtractScore_FallbackNoKeyword()
+PASS   : TestDocxHelper::testExtractScore_NoScore()
+PASS   : TestDocxHelper::testExtractScore_InvalidFile()
+PASS   : TestDocxHelper::testWriteComment_ReplaceExisting()
+PASS   : TestDocxHelper::testWriteComment_AppendNew()
+PASS   : TestDocxHelper::testWriteComment_EmptyComment()
+PASS   : TestDocxHelper::testWriteComment_VerifyContent()
+PASS   : TestDocxHelper::cleanupTestCase()
+Totals: 10 passed, 2 failed, 0 skipped, 0 blacklisted, 19823ms
+********* Finished testing of TestDocxHelper *********
