@@ -1,0 +1,91 @@
+﻿  food.c
+  game.c
+  list.c
+D:\zzy练习\c++\-\Vibe—Snake_game\src\food.c(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\zzy练习\c++\-\Vibe—Snake_game\src\food.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../src/food.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../src/food.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\config.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../src/food.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\game.c(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\zzy练习\c++\-\Vibe—Snake_game\src\game.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../src/game.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\snake.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../src/game.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../src/game.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\config.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../src/game.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\food.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../src/game.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.c(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../src/list.c”)
+  
+  snake.c
+D:\zzy练习\c++\-\Vibe—Snake_game\src\snake.c(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\zzy练习\c++\-\Vibe—Snake_game\src\snake.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../src/snake.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../src/snake.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\config.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../src/snake.c”)
+  
+  正在生成代码...
+  test_food.cpp
+D:\zzy练习\c++\-\Vibe—Snake_game\tests\test_food.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\zzy练习\c++\-\Vibe—Snake_game\src\food.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test_food.cpp”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test_food.cpp”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\config.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test_food.cpp”)
+  
+  test_game.cpp
+D:\zzy练习\c++\-\Vibe—Snake_game\tests\test_game.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\zzy练习\c++\-\Vibe—Snake_game\src\game.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test_game.cpp”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\snake.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test_game.cpp”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test_game.cpp”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\config.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test_game.cpp”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\food.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test_game.cpp”)
+  
+  test_list.cpp
+D:\zzy练习\c++\-\Vibe—Snake_game\tests\test_list.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test_list.cpp”)
+  
+  test_snake.cpp
+D:\zzy练习\c++\-\Vibe—Snake_game\tests\test_snake.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\zzy练习\c++\-\Vibe—Snake_game\src\snake.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test_snake.cpp”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test_snake.cpp”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\config.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test_snake.cpp”)
+  
+  正在生成代码...
+  Tests.vcxproj -> D:\zzy练习\c++\-\Vibe—Snake_game\x64\Debug\Tests.exe

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GtaTestDurations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Executable>D:\zzy练习\c++\-\Vibe—Snake_game\x64\Debug\Tests.exe</Executable>
+  <TestDurations>
+    <TestDuration Test="ListCreateDestroy.CreatesNonNull" Duration="1" />
+    <TestDuration Test="ListCreateDestroy.InitiallyEmpty" Duration="1" />
+    <TestDuration Test="ListCreateDestroy.DestroyNullIsSafe" Duration="1" />
+    <TestDuration Test="ListPushFront.SinglePush" Duration="1" />
+    <TestDuration Test="ListPushFront.MultiplePushOrder" Duration="1" />
+    <TestDuration Test="ListPushBack.SinglePush" Duration="1" />
+    <TestDuration Test="ListPushBack.MultiplePushOrder" Duration="1" />
+    <TestDuration Test="ListPushBack.MixedPushOrder" Duration="1" />
+    <TestDuration Test="ListPopFront.SinglePop" Duration="1" />
+    <TestDuration Test="ListPopFront.EmptyList" Duration="1" />
+    <TestDuration Test="ListPopBack.SinglePop" Duration="1" />
+    <TestDuration Test="ListPopBack.EmptyList" Duration="1" />
+    <TestDuration Test="ListAccess.AtIndex" Duration="1" />
+    <TestDuration Test="ListAccess.EmptyListReturnsNull" Duration="1" />
+    <TestDuration Test="ListQuery.Contains" Duration="1" />
+    <TestDuration Test="ListQuery.EmptyListContainsNothing" Duration="1" />
+    <TestDuration Test="ListClear.AfterClearIsEmpty" Duration="1" />
+    <TestDuration Test="ListClear.ClearEmptyList" Duration="1" />
+    <TestDuration Test="ListCircular.DoublyLinkedAndCircular" Duration="1" />
+    <TestDuration Test="ListStress.PushPopMany" Duration="1" />
+    <TestDuration Test="ListStress.AlternatingPush" Duration="1" />
+    <TestDuration Test="FoodDef.AllTypesAccessible" Duration="1" />
+    <TestDuration Test="FoodDef.InvalidTypeReturnsNull" Duration="1" />
+    <TestDuration Test="FoodRandom.EachTypeAppearsOverManyRolls" Duration="1" />
+    <TestDuration Test="FoodRandom.LegendaryRarerThanCommon" Duration="1" />
+    <TestDuration Test="FoodRandom.SameSeedGivesSameSequence" Duration="1" />
+    <TestDuration Test="FoodSpawn.EmptyGridSpawnsSuccessfully" Duration="1" />
+    <TestDuration Test="FoodSpawn.NotOnOccupiedCells" Duration="1" />
+    <TestDuration Test="FoodSpawn.FailsWhenGridFull" Duration="1" />
+    <TestDuration Test="SnakeInit.CreatesWithCorrectState" Duration="1" />
+    <TestDuration Test="SnakeMove.MovesForwardCorrectly" Duration="1" />
+    <TestDuration Test="SnakeMove.MovesMultipleSteps" Duration="1" />
+    <TestDuration Test="SnakeTurn.TurnsInAllFourDirections" Duration="1" />
+    <TestDuration Test="SnakeTurn.NoReverseDirection" Duration="1" />
+    <TestDuration Test="SnakeTurn.ReverseBlockedAfterTurn" Duration="1" />
+    <TestDuration Test="SnakeCollision.WallCollisionLeft" Duration="1" />
+    <TestDuration Test="SnakeCollision.WallCollisionRight" Duration="1" />
+    <TestDuration Test="SnakeCollision.WallCollisionTop" Duration="1" />
+    <TestDuration Test="SnakeCollision.WallCollisionBottom" Duration="1" />
+    <TestDuration Test="SnakeCollision.SelfCollisionDetected" Duration="1" />
+    <TestDuration Test="SnakeGrow.GrowAfterEating" Duration="1" />
+    <TestDuration Test="SnakeGrow.MultipleGrowAccumulates" Duration="1" />
+    <TestDuration Test="SnakeIntegration.EatAndGrowThenMove" Duration="1" />
+    <TestDuration Test="SnakeDestroy.NullIsSafe" Duration="1" />
+    <TestDuration Test="GameCreate.InitialState" Duration="1" />
+    <TestDuration Test="GameScore.EatOneFood" Duration="1" />
+    <TestDuration Test="GameScore.EatMultipleFoodsAccumulates" Duration="1" />
+    <TestDuration Test="GameScore.HighScoreUpdatedOnDeath" Duration="1" />
+    <TestDuration Test="GameSpeed.DecreasesAfterFiveFoods" Duration="1" />
+    <TestDuration Test="GameSpeed.ClampedToMinimum" Duration="1" />
+    <TestDuration Test="GameDeath.WallCollision" Duration="1" />
+    <TestDuration Test="GameState.PauseResume" Duration="1" />
+    <TestDuration Test="GameDestroy.NullIsSafe" Duration="1" />
+  </TestDurations>
+</GtaTestDurations>

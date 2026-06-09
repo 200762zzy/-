@@ -1,0 +1,94 @@
+﻿  audio.c
+  food.c
+D:\zzy练习\c++\-\Vibe—Snake_game\src\audio.c(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\zzy练习\c++\-\Vibe—Snake_game\src\audio.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/audio.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\food.c(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\zzy练习\c++\-\Vibe—Snake_game\src\food.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/food.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/food.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\config.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/food.c”)
+  
+  game.c
+D:\zzy练习\c++\-\Vibe—Snake_game\src\game.c(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\zzy练习\c++\-\Vibe—Snake_game\src\game.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/game.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\snake.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/game.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/game.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\config.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/game.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\food.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/game.c”)
+  
+  list.c
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.c(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/list.c”)
+  
+  main.c
+D:\zzy练习\c++\-\Vibe—Snake_game\src\main.c(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\zzy练习\c++\-\Vibe—Snake_game\src\renderer.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/main.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\config.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/main.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\game.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/main.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\snake.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/main.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/main.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\food.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/main.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\audio.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/main.c”)
+  
+  renderer.c
+D:\zzy练习\c++\-\Vibe—Snake_game\src\renderer.c(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\zzy练习\c++\-\Vibe—Snake_game\src\renderer.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/renderer.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\config.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/renderer.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\snake.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/renderer.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/renderer.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\food.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/renderer.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\renderer.c(109,29): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+D:\zzy练习\c++\-\Vibe—Snake_game\src\renderer.c(110,29): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  snake.c
+D:\zzy练习\c++\-\Vibe—Snake_game\src\snake.c(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\zzy练习\c++\-\Vibe—Snake_game\src\snake.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/snake.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\list.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/snake.c”)
+  
+D:\zzy练习\c++\-\Vibe—Snake_game\src\config.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“src/snake.c”)
+  
+  正在生成代码...
+LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+  Vibe—Snake_game.vcxproj -> D:\zzy练习\c++\-\Vibe—Snake_game\x64\Debug\Vibe—Snake_game.exe

@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Vibe—Snake_game.vcxproj" Id="f88e2084-c83d-443f-8b1a-5290d018ad69" />
+  <Project Path="tests\Tests.vcxproj" Id="a1b2c3d4-e5f6-7890-abcd-ef1234567890" />
+</Solution>
