@@ -276,12 +276,11 @@ void MainWindow::setupGlobalStyle()
 
         /* ========== 日志区域 ========== */
         QTextEdit#logEdit {
-            background: rgba(0,0,0,0.25);
+            background: rgba(30,30,40,0.85);
             border: 1px solid rgba(255,255,255,0.12);
             border-radius: 10px;
             padding: 8px;
-            color: #e8e8e8;
-            font-size: 12px;
+            color: #e0e0e0;
         }
 
         /* ========== 日志区滚动条 ========== */
@@ -334,7 +333,7 @@ void MainWindow::setupGlobalStyle()
 void MainWindow::setupUI()
 {
     setWindowTitle("实验报告AI自动评语生成工具");
-    resize(860, 780);
+    resize(1000, 900);
     setMinimumSize(700, 600);
 
     // ---- 全局毛玻璃样式 ----
@@ -540,9 +539,9 @@ void MainWindow::setupUI()
     m_logEdit = new QTextEdit();
     m_logEdit->setObjectName("logEdit");
     m_logEdit->setReadOnly(true);
-    QFont logFont("Consolas", 10);
+    QFont logFont("Consolas", 11);
     if (!QFontInfo(logFont).fixedPitch()) {
-        logFont = QFont("Courier New", 10);
+        logFont = QFont("Courier New", 11);
     }
     m_logEdit->setFont(logFont);
     logCardLayout->addWidget(m_logEdit, 1);
@@ -632,7 +631,7 @@ void MainWindow::appendLog(const QString &msg, int type)
 {
     QString color;
     switch (type) {
-        case 0:  color = "#b0b0b0"; break;
+        case 0:  color = "#d0d0d0"; break;
         case 1:  color = "#69db7c"; break;
         case 2:  color = "#ffd43b"; break;
         case 3:  color = "#ff6b6b"; break;

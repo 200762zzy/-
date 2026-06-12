@@ -1,4 +1,0 @@
-Unknown test function: 'testExtractScore_WithScoreKeyword'. Possible matches:
-
-D:\qt\classObject2\tests\release\test_classObject2.exe -functions
-lists all available test functions.

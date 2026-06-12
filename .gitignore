@@ -1,7 +1,11 @@
 # Build directories
 build-*/
 
-# Qt generated files
+# Qt build output directories (all projects)
+debug/
+release/
+
+# Qt generated build files
 *.o
 *.obj
 *.exe
@@ -11,5 +15,23 @@ ui_*.h
 qrc_*.cpp
 moc_*.h
 Makefile*
+*.qmake.stash
+object_script.*
+
+# Qt Creator user settings (machine-specific paths)
+*.pro.user
+
+# Binary archives
+*.zip
+
+# IDE
+.vscode/
+.idea/
+
+# OS
 .DS_Store
 Thumbs.db
+
+# Test output logs
+*.log
+classObject2/tests/*.txt
