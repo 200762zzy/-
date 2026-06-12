@@ -222,6 +222,13 @@ QString DocxHelper::extractScore(const QString &docxPath, QString &errorMsg)
             QRegularExpressionMatch match = numRe.match(afterKw);
             if (match.hasMatch()) {
                 QString score = match.captured(1);
+                // "评分"/"总评" 且分数 ≤ 10 时，很可能是 10 分制的教师评分
+                // 跳过它，继续找百分制的成绩（如 "成绩"、"分数"、"得分"）
+                if (kw == "评分" || kw == "总评") {
+                    double val = score.toDouble();
+                    if (val <= 10)
+                        continue;
+                }
                 QDir(tempDir).removeRecursively();
                 return score;
             }
@@ -231,8 +238,11 @@ QString DocxHelper::extractScore(const QString &docxPath, QString &errorMsg)
     // ==============================================
     // 第二遍：从底向上扫描段落，返回最后一个 0-100 的数字
     // 成绩通常在文档末尾（实验步骤/总结之后）
+    //
+    // 注意：优先返回 > 10 的分数（百分制），
+    // ≤ 10 的分数（如教师评分 9.23，10 分制）作为兜底
     // ==============================================
-    QString foundScore;
+    QString weakScore; // 兜底分数（≤ 10）
     for (int i = paraTexts.size() - 1; i >= 0; i--) {
         const QString &text = paraTexts[i];
         QRegularExpressionMatchIterator it = numRe.globalMatch(text);
@@ -241,21 +251,125 @@ QString DocxHelper::extractScore(const QString &docxPath, QString &errorMsg)
             bool ok = false;
             double val = m.captured(1).toDouble(&ok);
             if (ok && val >= 0 && val <= 100) {
-                foundScore = m.captured(1);
-                // 从底向上遍历，最后一个匹配即为最靠近文档末尾的数字
-                // 这里不提前返回，继续扫完整个段落找此段中最后一个匹配
+                if (val > 10) {
+                    // 百分制成绩，直接返回
+                    QDir(tempDir).removeRecursively();
+                    return m.captured(1);
+                }
+                // ≤ 10 的分数（可能是 10 分制教师评分），先留着兜底，继续往上找
+                if (weakScore.isEmpty())
+                    weakScore = m.captured(1);
             }
         }
-        if (!foundScore.isEmpty()) {
-            QDir(tempDir).removeRecursively();
-            return foundScore;
-        }
+    }
+
+    // 实在没有 > 10 的分数，用 ≤ 10 的作为兜底
+    if (!weakScore.isEmpty()) {
+        QDir(tempDir).removeRecursively();
+        return weakScore;
     }
 
     // 没找到分数
     QDir(tempDir).removeRecursively();
     errorMsg = "未在文档中找到成绩分数";
     return QString();
+}
+
+/*
+ * ==============================================
+ * 从 docx 中提取实验信息（目的、名称、内容）
+ *
+ * 逻辑：
+ *   1. 解压 docx 到临时目录
+ *   2. 读取 word/document.xml
+ *   3. 按 <w:p>（段落）分组拼接 <w:t> 文本
+ *   4. 扫描段落，查找包含以下关键字的段落：
+ *      "实验目的"、"实验名称"、"实验内容"、"实验要求"
+ *   5. 将找到的内容格式化为："实验名称：XXX\n实验目的：XXX\n实验内容：XXX"
+ *   6. 清理临时目录
+ * ==============================================
+ */
+QString DocxHelper::extractPurpose(const QString &docxPath, QString &errorMsg)
+{
+    // 临时目录
+    QString tempDir = QDir::tempPath() + "/docx_" +
+                      QUuid::createUuid().toString(QUuid::WithoutBraces).left(8);
+
+    // 解压
+    if (!unzipDocx(docxPath, tempDir, errorMsg)) {
+        QDir(tempDir).removeRecursively();
+        return QString();
+    }
+
+    // 读取 XML
+    QString xmlContent = readDocumentXml(tempDir, errorMsg);
+    if (xmlContent.isEmpty()) {
+        QDir(tempDir).removeRecursively();
+        return QString();
+    }
+
+    // ==============================================
+    // 解析 XML
+    // ==============================================
+    QDomDocument doc;
+    if (!doc.setContent(xmlContent)) {
+        // 解析失败不报错，直接返回空
+        QDir(tempDir).removeRecursively();
+        return QString();
+    }
+
+    QDomNodeList paragraphs = doc.elementsByTagName("w:p");
+
+    // 收集每个段落中的 w:t 文本，按段落拼接
+    QStringList paraTexts;
+    for (int i = 0; i < paragraphs.size(); i++) {
+        QDomElement pElem = paragraphs.item(i).toElement();
+        QDomNodeList tNodes = pElem.elementsByTagName("w:t");
+        QString combined;
+        for (int j = 0; j < tNodes.size(); j++) {
+            combined += tNodes.item(j).toElement().text().trimmed();
+        }
+        if (!combined.isEmpty())
+            paraTexts.append(combined);
+    }
+
+    if (paraTexts.isEmpty()) {
+        QDir(tempDir).removeRecursively();
+        return QString();
+    }
+
+    // ==============================================
+    // 扫描段落，提取实验相关信息
+    // ==============================================
+    struct { QString keyword; QString label; } purposeKeywords[] = {
+        { "实验目的", "实验目的" },
+        { "实验名称", "实验名称" },
+        { "实验内容", "实验内容" },
+        { "实验要求", "实验要求" },
+    };
+
+    QStringList foundLines;
+    for (const auto &kw : purposeKeywords) {
+        for (int i = 0; i < paraTexts.size(); i++) {
+            const QString &text = paraTexts[i];
+            int kwPos = text.indexOf(kw.keyword);
+            if (kwPos < 0)
+                continue;
+            // 提取整个段落文本（已含关键词）
+            QString line = text.trimmed();
+            if (!line.isEmpty()) {
+                foundLines.append(line);
+            }
+            break; // 每个关键词只取第一次出现
+        }
+    }
+
+    QDir(tempDir).removeRecursively();
+
+    if (foundLines.isEmpty())
+        return QString();
+
+    return foundLines.join("\n");
 }
 
 /*

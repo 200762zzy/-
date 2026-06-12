@@ -23,11 +23,12 @@ public:
 
     /*
      * 同步调用 DeepSeek API
-     * 传入 成绩分数 + 自定义提示词
+     * 传入 成绩分数 + 实验目的（自动从 docx 提取）+ 自定义提示词（可选）
      * 返回 AI 生成的评语字符串
      * 如果出错，errorMsg 会附带错误描述
      */
     QString generateCommentSync(const QString &score,
+                                const QString &purpose,
                                 const QString &prompt,
                                 QString &errorMsg);
 

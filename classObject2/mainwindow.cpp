@@ -476,10 +476,10 @@ void MainWindow::setupUI()
 
     m_promptEdit = new QTextEdit();
     m_promptEdit->setPlaceholderText(
-        "请输入本次实验的要求和评分标准，例如：\n"
-        "实验内容：用 Qt 实现一个计算器，要求支持加减乘除运算。\n"
-        "评分标准：界面布局是否合理（30%）、功能是否完整（40%）、代码规范（30%）。\n\n"
-        "AI 将根据学生成绩 + 你的提示词，自动生成针对性评语。"
+        "可选：补充额外的实验要求或评分标准。\n"
+        "若留空，AI 将仅根据文档中的实验目的/名称/内容和成绩生成评语。\n\n"
+        "例如：\n"
+        "评分标准：界面布局是否合理（30%）、功能是否完整（40%）、代码规范（30%）。"
     );
     m_promptEdit->setMinimumHeight(90);
     m_promptEdit->setMaximumHeight(130);
@@ -694,9 +694,7 @@ void MainWindow::onStart()
     }
     QString prompt = m_promptEdit->toPlainText().trimmed();
     if (prompt.isEmpty()) {
-        appendLog("请输入本次实验的提示词（实验要求/评分标准）", 3);
-        m_promptEdit->setFocus();
-        return;
+        appendLog("未填写补充提示词，将仅根据文档中的实验信息生成评语", 2);
     }
 
     saveSettings();

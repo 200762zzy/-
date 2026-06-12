@@ -54,6 +54,7 @@ void DeepSeekApi::setModel(const QString &model)
  * ==============================================
  */
 QString DeepSeekApi::generateCommentSync(const QString &score,
+                                          const QString &purpose,
                                           const QString &prompt,
                                           QString &errorMsg)
 {
@@ -89,9 +90,16 @@ QString DeepSeekApi::generateCommentSync(const QString &score,
 
     // user 角色：传入实际数据
     QJsonObject userMsg;
+    QString userContent;
+    if (purpose.isEmpty()) {
+        userContent = QString("学生实验成绩：%1分\n实验要求：%2\n请生成教师评语。")
+                          .arg(score, prompt);
+    } else {
+        userContent = QString("学生实验成绩：%1分\n%2\n实验要求：%3\n请生成教师评语。")
+                          .arg(score, purpose, prompt);
+    }
     userMsg["role"] = "user";
-    userMsg["content"] = QString("学生实验成绩：%1分\n实验要求：%2\n请生成教师评语。")
-                             .arg(score, prompt);
+    userMsg["content"] = userContent;
     messages.append(userMsg);
 
     body["messages"] = messages;

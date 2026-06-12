@@ -117,9 +117,15 @@ void WorkerThread::run()
             emit logMessage(QString("  ✓ 提取到成绩：%1 分").arg(score), 1);
         }
 
+        // ---- 步骤1b：提取实验目的/名称/内容（自动填充，无需手动输入） ----
+        QString purpose = DocxHelper::extractPurpose(filePath, errorMsg);
+        if (!purpose.isEmpty()) {
+            emit logMessage(QString("  ✓ 自动提取实验信息：%1").arg(purpose.left(60).replace('\n', ' ')), 1);
+        }
+
         // ---- 步骤2：调 API 生成评语 ----
         QString apiError;
-        QString comment = api.generateCommentSync(score, m_prompt, apiError);
+        QString comment = api.generateCommentSync(score, purpose, m_prompt, apiError);
 
         if (comment.isEmpty()) {
             emit logMessage(QString("  ✗ %1：%2").arg(fileName, apiError), 3);
